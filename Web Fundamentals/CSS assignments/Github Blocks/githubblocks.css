@@ -1,0 +1,34 @@
+h1 {
+    text-align: center;
+}
+img {
+    height: 200px;
+}
+p {
+    text-align: center;
+}
+.container{
+    width: 1000px;
+    padding: 20px;
+    background-color: silver;
+}
+.firstbox{
+    background-color: aqua;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+.secondbox{
+    background-color: bisque;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+.thirdbox{
+    background-color: brown;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+}
