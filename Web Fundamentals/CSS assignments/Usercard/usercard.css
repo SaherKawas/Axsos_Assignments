@@ -5,10 +5,11 @@
 
 .container {
     margin: 0 auto;
-    border: 1px solid #cccccccc;
+    border: 3px solid #cccccccc;
     position: relative;
     width: 550px;
     height: 330px;
+    margin-top: 40px;
 }
 
 .back-ground {
