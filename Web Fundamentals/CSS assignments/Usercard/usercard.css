@@ -1,0 +1,60 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+.container {
+    margin: 0 auto;
+    border: 1px solid #cccccccc;
+    position: relative;
+    width: 550px;
+    height: 330px;
+}
+
+.back-ground {
+    height: 100px;
+    background-color: #16a2b8;
+
+}
+.user-circle{
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    top: 60px;
+    left: 30px;
+}
+.username{
+    position: relative;
+    top: 40px;
+    left: 20px;
+}
+.map{
+    left: 20px;
+    height: 20px;
+    width: 15px;
+    margin-right: 10px;
+    
+}
+.address{
+    position: absolute;
+    display: flex;
+    left: 20px;
+    top: 57%;
+}
+.description {
+    position: absolute;
+    left: 20px;
+    top: 65%;
+}
+.url{
+    position: absolute;
+    left: 50px;
+    bottom: 20px;
+}
+.gear{
+    position: absolute;
+    height: 20px;
+    left: 20px;
+    width: 20px;
+    bottom: 20px;
+}
