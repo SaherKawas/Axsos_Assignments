@@ -2,7 +2,6 @@
     padding: 0px;
     margin: 0px;
 }
-
 .container {
     margin: 0 auto;
     border: 3px solid #cccccccc;
@@ -11,11 +10,9 @@
     height: 330px;
     margin-top: 40px;
 }
-
 .back-ground {
     height: 100px;
     background-color: #16a2b8;
-
 }
 .user-circle{
     height: 70px;
