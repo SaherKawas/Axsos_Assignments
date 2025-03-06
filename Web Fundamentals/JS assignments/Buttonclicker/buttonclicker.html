@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Clicker</title>
+    <link rel="stylesheet" href="buttonclicker.css">
+</head>
+<body>
+    <section class="container">   
+        <header>
+            <nav>
+                <h1 class="heading-nav">Dojonary</h1>
+                <input type="search" placeholder="Search" class="search" size="40">
+                <button onclick="changeText(this)" class="button-nav">Login</button>
+            </nav>
+        </header>
+        <main>
+            <section class="container-first">
+                <section class="ninja-firstrectangle">
+                    <section class="ninja-firstcontent">
+                        <h1 class="heading-ninja">ninja</h1>
+                        <p><em>noun</em></p>
+                        <p>Plural: <em>ninjas</em></p>
+                        <button onclick="getNotification()" class="thirteenlikes">13 likes</button>
+                    </section>
+                    <section class="ninja-secondcontent">
+                        <p class="ninja-definition">A practitioner skilled in the <a href="#">Japanese</a> art of <a href="#">ninjutsu</a></p>
+                    </section>
+                </section>    
+                <section class="ninja-secondrectangle">
+                    <section class="ninja-secondcontent">
+                        <h1 class="heading-ninja">ninja</h1>
+                        <p><em>noun</em></p>
+                        <p>Plural: <em>ninjas</em></p>
+                        <button class="thirteenlikes">37 likes</button> 
+                    </section>
+                    <section class="ninja-seconddefinition">
+                        <p class="ninja-definition">A <a href="#">programmer</a> who breaks down problems with <a href="#">zen</a>-like focus</p>
+                    </section>   
+                </section>
+            </section>
+            <section class="container-second">
+                <section class="third-rectangle">
+                    <section class="third-content">
+                        <h1>Dojonary is defined by YOU</h1>
+                        <button onclick="hideButton(this)" class="add-definition">Add Definition</button>
+                    </section>
+                </section>
+            </section>
+        </main>
+    </section> 
+    <script src="buttonclicker.js"></script>
+</body>
+</html>

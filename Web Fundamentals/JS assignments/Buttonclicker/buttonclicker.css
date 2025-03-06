@@ -1,0 +1,99 @@
+.container{
+    width: 950px;
+    margin: 0 auto;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(188, 187, 187);
+    height: 60px;
+    gap: 50px;
+}
+.heading-nav{
+    color: black;
+    font-size: 40px;
+}
+.button-nav{
+    color: white;
+    background-color: #2f76e2;
+    border: 2px solid black;
+    box-shadow: 4px 4px black;
+    padding: 7px;
+    width: 70px;
+}
+.search{
+    border: 3px solid black;
+    padding: 5px;
+}
+.ninja-firstrectangle{
+    width: 600px;
+    height: 250px;
+    border: 3px solid black;
+    margin-top: 30px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.ninja-firstcontent{
+    width: 130px;
+    text-align: center;
+    margin-left: 20px;
+    margin-bottom: 40px;
+}
+.heading-ninja{
+    font-size: 30px;
+}
+.ninja-definition{
+    width: 350px;
+    font-size: 30px;
+}
+.thirteenlikes{
+    background-color: #fdd866;
+    padding: 7px;
+    width: 90px;
+    box-shadow: 3px 3px 0 black;
+}
+.ninja-secondrectangle{
+    width: 600px;
+    height: 250px;
+    border: 3px solid black;
+    margin-top: 30px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.ninja-secondcontent{
+    width: 130px;
+    text-align: center;
+    margin-left: 20px;
+    margin-bottom: 40px;
+}
+.ninja-seconddefinition{
+    width: 130px;
+    text-align: center;
+    margin-left: 20px;
+    margin-bottom: 40px;
+}
+main{
+    display: flex;
+}
+.third-rectangle{
+    width: 300px;
+    height: 250px;
+    border: 3px solid black;
+    margin-top: 30px;
+    margin-left: 35px;
+}
+.third-content{
+    margin-left: 20px;
+    margin-right: 10px;
+    font-size: 40px;
+}
+.add-definition{
+    background-color: #92c47d;
+    padding: 7px;
+    width: 200px;
+    box-shadow: 3px 3px 0 black;
+    margin-left: 30px;
+}

@@ -52,10 +52,6 @@ li{
 .ul-link{
     display: flex;
 }
-.container{
-    display: flex;
-
-}
 .profile-card{
     width: 500px;
     height: 250px;
@@ -216,7 +212,7 @@ bottom: 30px;
 }
 .your-connections{
     width: 260px;
-    height: 360px;
+    height: 340px;
     margin-top: 20px;
     margin-left: 30px;
     border: 2px solid gray;
