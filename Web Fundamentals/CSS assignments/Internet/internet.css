@@ -3,8 +3,9 @@
     padding: 0;
     font-family: sans-serif;
 }
-body{
-    width: 100%;
+.container{
+    width: 970px;
+    margin: 0 auto;
 }
 .container{
     position: relative;
@@ -42,18 +43,30 @@ nav h1{
     color: white;
 }
 main{
-    padding-top: 120px;
-    padding-left: 5px;
+    padding-top: 100px;
+    width: 970px;
+    display: flex;
+}
+.gradient{
+    width: 300px;
+    background: linear-gradient(to bottom, #e4e3e4, white); 
+}
+.gradient-two{
+    width: 100%;
+
+    background: linear-gradient(to bottom, #e4e3e4, white);
 }
 main section section h1{
     font-size: 17px;
 }
-main section div p{
+.inter{
     font-size: 14px;
     font-weight: bold;
 }
 main section div{
     width: 250px;
+    padding-left: 5px;
+    padding-top: 10px;
 }
 main section div span{
     color: #cf302d;
@@ -77,36 +90,141 @@ main section div span{
 }
 .second-container{
     width: 200px;
-    
+    margin-left: 5px;
     margin-top: 25px;
     border-top: 2px solid #949699;
+    margin-bottom;
 }
 .ad-background{
     height: 285px;
     position: relative;
-    padding-top: 25px;
+    padding-top: 15px;
 }
 .ninja{
     height: 120px;
     position: absolute;
     left: 60px;
-    bottom: 100px;
+    bottom: 270px;
 }
 .learn-more{
     position: absolute;
-    left: 20px;
-    bottom: 60px;
+    left: 27px;
+    bottom: 220px;
     background-color: #31c8e0;
     padding: 7px 30px;
     border: 2px solid #31c8e0;
     border-radius: 5px;
     color: white;
+    box-shadow: 3px 3px 2px black;
 }
 .reinvent-career{
     position: absolute;
-    width: 200px;
+    width: 180px;
     text-align: center;
-    bottom: 220px;
+    bottom: 410px;
     color: white;
     font-weight: lighter;
+    font-weight: bold;
+}
+.home-image{
+    height: 20px;
+    width: 20px;
+}
+.dns{
+    color: #437fb0;
+}
+.number{
+    color: #31c8e0;
+    font-size: 20px;
+}
+.phone{
+    align-items: center;
+    height: 40px;
+    width: 40px;
+}
+.first-section{
+    display: flex;
+    justify-content: space-between;
+    width: 690px;
+    
+}
+.time{
+    font-size: 10px;
+}
+.contact{
+    display: flex;
+    justify-content: center;
+    margin-right: -60px;
+    
+}
+.international{
+    font-size: 10px;
+}
+.numbers{
+    width: 900px;
+}
+.clients-section{
+    width: 690px;
+    border-top: 2px solid #949699;
+}
+.clients{
+    padding-bottom: 5px;
+    color: #26689f;
+}
+.computers{
+    padding-bottom: 5px;
+    font-size: 14px;
+}
+.list{
+    padding-bottom: 5px;
+    font-size: 14px;
+}
+.clients-servers{
+    padding-left: 40px;
+    font-size: 14px;
+}
+.web{
+    text-decoration: none;
+    color: #437fb0;
+}
+.center-client{
+    width: 690px;
+    display: flex;
+    justify-content: center;
+}
+.client-serverimage{
+    height: 100px;
+}
+.title-happen{
+    color: #26689f;
+}
+.width-orderl{
+    width: 690px;
+    padding-left: 40px;
+    font-size: 14px;
+}
+.last-section{
+    display: flex;
+    justify-content: start;
+    border: 5px solid #0285e2;
+    box-shadow: 3px 3px 2px #7c8896;
+    width: 690px;
+    margin-top: 20px;
+    height: 200px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+.html-image{
+    height: 150px;
+}
+.big-three{
+    width: auto;
+    font-size: 14px;
+}
+.html-css{
+    color: #26689f;
+    padding-bottom: 5px;
+}
+.server{
+    padding-bottom: 5px;
 }

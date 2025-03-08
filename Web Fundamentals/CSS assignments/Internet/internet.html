@@ -7,37 +7,88 @@
     <link rel="stylesheet" href="internet.css">
 </head>
 <body>
-    <header>
-        <img src="images/globe.png" alt="picture of globe">
-        <h1>The Inter<span>net</span></h1>
-    </header> 
-    <nav>
-        <h1>The World Wide Web</h1>
-    </nav>
-    <main>
-        <section>
-            <div>
-                <h1>So, what's an <span>Internet?</span></h1>
-                <br>
-                <p>An <span>Inter</span>connected <span>Net</span>work of computers all around the world!</p>
-                <br>
+    <section class="container">
+        <header>
+            <img src="images/globe.png" alt="picture of globe">
+            <h1>The Inter<span>net</span></h1>
+        </header> 
+        <nav>
+            <h1>The World Wide Web</h1>
+        </nav>
+        <main>
+            <section class="gradient">
                 <div>
-                    <button class="watch-video">WATCH A VIDEO</button>
+                    <h1>So, what's an <span>Internet?</span></h1>
+                    <br>
+                    <p class="inter">An <span>Inter</span>connected <span>Net</span>work of computers all around the world!</p>
+                    <br>
+                    <div>
+                        <button class="watch-video">WATCH A VIDEO</button>
+                    </div>
+                    <div>
+                        <button class="more-resources">MORE RESOURCES</button>
+                    </div>
                 </div>
-                <div>
-                    <button class="more-resources">MORE RESOURCES</button>
+                <div class="second-container">
+                    <img class="ad-background" src="images/ad_background.png" alt="pic of background">
+                    <div>
+                        <h1 class="reinvent-career">Reinvent you career in just 14 weeks</h1>
+                        <img class="ninja" src="images/ninja.png" alt="pic of ninja">
+                        <button class="learn-more">Learn More >>></button>
+                    </div>
                 </div>
-            </div>
-            <div class="second-container">
-                <img class="ad-background" src="images/ad_background.png" alt="pic of background">
-                <div>
-                    <h1 class="reinvent-career">Reinvent you career in just 14 weeks</h1>
-                    <img class="ninja" src="images/ninja.png" alt="pic of ninja">
-                    <button class="learn-more">Learn More >>></button>
-                </div>
-            </div>
-        </section>
-        
-    </main>
+            </section>
+            <section class="gradient-two">
+                <section class="first-section">
+                    <div>
+                        <img class="home-image" src="images/home.png" alt="Home button"><span class="dns">DNS</span>
+                    </div>
+                    <div class="contact">
+                        <div>
+                            <img class="phone" src="images/phone.png" alt="phone picture">
+                        </div>
+                        <div class="numbers">
+                            <p class="time">Mon - Fri 8 a.m. - 5 p.m. (EST)</p>
+                            <p class="number">855.967.3787</p>
+                            <p class="international">International +1.617.963.0555</p>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="clients-section">
+                        <h1 class="clients">Clients and Servers</h1>
+                        <p class="computers">Computers connected to the <a class="web" href="#" >Web</a> are called <strong>clients</strong> and <strong>servers</strong>.</p>
+                        <ul class="clients-servers">
+                            <li class="list">Clients are the typical Web user's Internet-connected devices (for example, your computer connected to your Wi-Fi, or your phone connected to your mobile network) and Web-accessing software available on those devices (usually a web browser like Firefox or Chrome).</li>
+                            <li>Servers are computers that store webpages, sites, or apps. When a client device wants to access a webpage, a copy of the webpage is downloaded from the server onto the client machine to be displayed in the user's web browser.</li>
+                        </ul>
+                    </div>
+                    <div class="center-client">
+                        <img class="client-serverimage" src="images/client_server.jpg" alt="">
+                    </div>
+                    <div>
+                        <h1 class="title-happen">So What Actually Happens?</h1>
+                        <ol class="width-orderl">
+                            <li>The browser goes to the DNS server and finds the real address of the server that the website lives on.</li>
+                            <li>The browser sends an HTTP request message to the server asking it to send a copy of the website to the client.</li>
+                            <li>If the server approves the client's request, the server sends the client a "200 OK" message, which means "Permission granted! Here you go!", and then starts sending the website's files to the browser as a series of small chunks.</li>
+                            <li>The browser assembles the small chunks into a complete website and displays it to you!
+                            </li>
+                        </ol>
+                    </div>
+                </section>
+                <section class="last-section">
+                    <div>
+                        <img class="html-image" src="images/html.png" alt="html picture">
+                    </div>
+                    <div class="big-three">
+                        <h1 class="html-css">The Big 3 - HTML, CSS, JavaScript</h1>
+                        <p class="server">While the server can process information in many different languages, the files that they serve to the client are always going to be some combination of HTML, CSS, and JavaScript!</p>
+                        <p>Learn more about the Big 3 <a href="#">here</a>!</p>
+                    </div>
+                </section>
+            </section>
+        </main>
+    </section>
 </body>
 </html>
