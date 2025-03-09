@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+nav{
+    background-color: black;
+    width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+}
+nav h1{
+    color: white;
+    font-weight: lighter;
+}
+main section h1{
+    text-align: center;
+    padding: 10px;
+    font-weight: lighter;
+}
+.container{
+    display: flex;
+    width: 600px;
+    height: 700px;
+    margin: 0 auto;
+}
+.avatar-profile{
+    border: 2px solid black;
+    width: 200px;
+    height: 300px;
+}
+.profile-picture{
+    height: 80px;
+    margin-left: 60px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+.first-section{
+    width: 200px;
+    height: 700px;
+}
+.avatar-link{
+    display: block;
+    margin-left: 50px;
+    margin-bottom: 40px;
+}
+.third-feed,.second-feed, .first-feed{
+    border: 2px solid black;
+    height: 150px;
+    margin-left: 20px;
+}
+.third-feed{
+    margin-top: 10px;
+}
+.second-feed{
+    margin-top: 10px;
+}
+.first-button, .second-button, .third-button{
+    background-color: #ffd966;
+    padding: 5px 10px;
+    border: 2px solid black;
+    box-shadow: 2px 2px 0;
+}
+.feed-flex1, .feed-flex2, .feed-flex3{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.like-flex, .like-flex2, .like-flex3{
+    
+    display: flex;
+    justify-content: space-around;
+    width: 130px;
+    align-items: center;
+}
+.third-paragraph{
+    width: 350px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.second-paragraph{
+    width: 350px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.first-paragraph{
+    width: 350px;
+    margin-left: 20px;
+    margin-top: 20px;
+}

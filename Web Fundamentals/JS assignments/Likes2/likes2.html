@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Likes2</title>
+    <link rel="stylesheet" href="likes2.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Network</h1>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h1>Your Feed</h1>
+        </section>
+        <section class="container">
+            <section class="first-section">
+                <div class="avatar-profile">
+                    <img class="profile-picture" src="images/user-circle.png" alt="profile picture">
+                    <a class="avatar-link" href="#">Add an avatar</a>
+                    <h1>James Doe</h1>
+                </div>
+            </section>
+            <section class="second-section">
+                <div class="first-feed">
+                    <div class="feed-flex1">
+                        <div>
+                            <h1>Neil M</h1>
+                        </div>
+                        <div class="like-flex">
+                            <p><span id="numberoflikes">9</span> likes</p>
+                            <button onclick="increaseLike(this)" id="like" class="first-button">Like</button>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="first-paragraph">
+                            <p>I just set up this new discord bot, let me know what you all think. <a href="#">link</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="second-feed">
+                    <div class="feed-flex2">
+                        <div>
+                            <h1>Nichole K</h1>
+                        </div>
+                        <div class="like-flex2">
+                            <p><span id="numberoflikes2">12</span> likes</p>
+                            <button class="second-button" id="like2" onclick="increaseLikes()">Like</button>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="second-paragraph">
+                            <p>I just finished my <a href="#">next comic</a>, check it out.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="third-feed">
+                    <div class="feed-flex3">
+                        <div>
+                            <h1>Jim R</h1>
+                        </div>
+                        <div class="like-flex3">
+                            <p><span id="numberoflikes3">9</span> likes</p>
+                            <button id="like3" class="third-button" onclick="increaseLike2()">Like</button>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="third-paragraph">
+                            <p>I can stop listening to the <a href="#">new album</a>. Who else is liking it?</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+    <script src="likes2.js"></script>
+</body>
+</html>
