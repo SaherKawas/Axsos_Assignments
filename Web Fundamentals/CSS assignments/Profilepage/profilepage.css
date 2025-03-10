@@ -171,12 +171,11 @@ bottom: 30px;
 .pcolor{
     color: gray;
 }
-/* .container-main{
+
+.container-main{
     display: flex;
-    flex: 1;
-} */
-
-
+   
+}
 .container-connection{
     display: flex;
     align-items: center;
