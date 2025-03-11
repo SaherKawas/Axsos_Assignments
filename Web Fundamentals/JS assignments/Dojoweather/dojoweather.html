@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Weather</title>
+    <link rel="stylesheet" href="dojoweather.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <section class="navigation">
+                <h1 class="heading1">DojoWeather</h1>
+                <ul class="ul-links">
+                    <li onclick="alertCity()">Burbank</li>
+                    <li>Chicago</li>
+                    <li>Dallas</li>
+                </ul>
+            </section>
+        </nav>
+    </header>
+    <main>
+        <section class="main-container">
+            <h1>San Jose</h1>
+            <div>
+                <label for="temperature">show temperature in</label>
+                <select onchange="changeTemperature()" name="temperature" id="temperature">
+                    <option>°C</option>
+                    <option>°F</option>
+                </select>
+            </div>
+        </section>
+        <section class="second-container">
+            <div class="today">
+                <h1 class="today-text">Today</h1>
+                <img class="some-rain" src="Images/some_rain.png" alt="rainy cloud">
+                <p class="some-rain-text">some rain</p>
+                <div class="temperature1">
+                    <p id="tempred" class="temperature-red">24°</p>
+                    <p id="tempblue" class="temperature-blue">18°</p>
+                </div>
+            </div>   
+            <div class="today">
+                <h1 class="today-text">Tomorrow</h1>
+                <img class="some-rain" src="Images/some_sun.png" alt="picture of sun">
+                <p class="some-rain-text">some sun</p>
+                <div class="temperature1">
+                    <p id="tempred" class="temperature-red">27°</p>
+                    <p id="tempblue" class="temperature-blue">19°</p>
+                </div>
+            </div>   
+            <div class="today">
+                <h1 class="today-text">Friday</h1>
+                <img class="some-rain" src="Images/some_clouds.png" alt="picture of cloud">
+                <p class="some-rain-text">some clouds</p>
+                <div class="temperature1">
+                    <p id="tempred" class="temperature-red">21°</p>
+                    <p id="tempblue" class="temperature-blue">16°</p>
+                </div>
+            </div>   
+            <div class="today">
+                <h1 class="today-text">Saturday</h1>
+                <img class="some-rain" src="Images/some_sun.png" alt="picture of sun">
+                <p class="some-rain-text">some sun</p>
+                <div class="temperature1">
+                    <p id="tempred" class="temperature-red">26°</p>
+                    <p id="tempblue" class="temperature-blue">21°</p>
+                </div>
+            </div>   
+        </section>
+        <section id="cookie-popup" class="third-container">
+            <div>
+                <img src="Images/cookie.png" alt="picture of cookie">
+            </div>
+            <div class="text">
+                <h1>Stop! Cookie time</h1>
+                <p>We use cookies (sadly not the edible ones) to personalize content and ads, to provide social media features and to analyse our traffic. <a href="#">Read more...</a></p>
+            </div>
+            <div>
+                <button onclick="hideCookie()" class="accept-button">I Accept</button>
+            </div>
+        </section>
+    </main>
+    <script src="dojoweather.js"></script>
+</body>
+</html>

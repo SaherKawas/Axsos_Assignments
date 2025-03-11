@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+nav{
+    margin: 0 auto;
+    background-color: #9fc5f8;
+    padding: 15px;
+}
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    width: 700px;
+    margin: 0 auto;
+    align-items: center;
+}
+.heading1{
+    color: white;
+    font-size: 35px;
+}
+.ul-links{
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    width: 400px;
+    font-size: 25px;
+    cursor: pointer;
+}
+main{
+    width: 700px;
+    margin: 0 auto;
+}
+.main-container{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-top: 20px;
+}
+.second-container{
+    display: flex;
+    justify-content: space-between;
+    border-top: 2px solid black;
+    margin-top: 20px;  
+}
+.today{
+    width: 150px;
+    background-color: #eeeeee;
+    margin-top: 20px;
+}
+.some-rain{
+    height: 100px;
+    border-radius: 50%;
+    margin-left: 25px;
+    margin-bottom: 20px;
+}
+.today-text{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.some-rain-text{
+    text-align: center;
+    padding-bottom: 20px;
+}
+.temperature1{
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 20px;
+}
+.temperature-red{
+    color: #cf2c29;
+}
+.temperature-blue{
+    color: #3a80e4;
+}
+.third-container{
+    border: 3px solid black;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 5px;
+    display: flex;
+    background-color: #eeeeee;
+}
+.accept-button{
+    margin-right: 10px;
+    background-color: #9fc5f8;
+    padding: 5px 10px;
+    box-shadow: 2px 2px 0 black;
+    cursor: pointer;
+}
+.text{
+    width: 450px;
+    padding: 10px;
+}
