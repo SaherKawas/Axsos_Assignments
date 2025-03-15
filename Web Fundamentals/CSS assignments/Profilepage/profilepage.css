@@ -1,310 +1,244 @@
 *{
-    padding: 0;
     margin: 0;
-    font-family: "Roboto", serif;
+    padding: 0;
 }
-
-nav{
-    text-align: center;
+header{
     background-color: black;
+}
+nav{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 50px;
-    position: relative;
+    padding: 15px;
+    margin: 0 auto;
+    /* width: 900px; */
 }
-h1{
+.navigation{
+    display: flex;
     color: white;
+    align-items: center;
 }
-
-       
-.ul-links{
-    color: white;
+.nav-links{
     display: flex;
     justify-content: space-around;
+    color: white;
     list-style: none;
     align-items: center;
-    position: absolute;
-    left: 28%;
-    top: 5%;
+    margin-left: 20px;
 }
-.section1{
-    margin-left: 200px;
-    display: flex;
-    align-items: center;
-}
-.section2{
-    margin-right: 200px;
-}
-.btn{
-    width: 100px;
+.button-signout{
     border: 2px solid black;
-    border-radius: 0%;
-    box-shadow: 4px 4px 0px black;
-    background-color: rgb(12, 216, 243);
+    background-color: #14a2b8;
     color: white;
-    padding: 5px;
+    padding: 8px 20px;
 }
-.link{
-    color: white;
-    text-decoration: none;
+.nav-links li{
+    padding: 10px 20px;
 }
-li{
-    margin: 15px;
+nav h1{
+    font-size: 25px;
 }
-.ul-link{
+.container{
+    margin: 20px auto; 
     display: flex;
+    justify-content: center; 
+    max-width: 970px; /
 }
-.profile-card{
-    width: 500px;
-    height: 250px;
-    margin-left: 300px;
-    margin-top: 50px;
-    border: 2px solid gray;
+.container1{
     position: relative;
+    border: 2px solid gray;
+    width: 450px;
+    height: 270px;
 }
 .profile-header{
-    background-color: rgb(2, 118, 118);
-    height: 70px;
-}
-.image{
-    border: 2px solid gray;
-    border-radius: 50%;
+    background-color: #14a2b8;
     height: 60px;
-    width: 60px;
-    position: absolute;
-    left: 20px;
-    top: 15%;
+    border: 2px #14a2b8;  
 }
-.name{
+.user-circle{
+    height: 70px;
+    margin-left: 20px;
     position: absolute;
-    left: 20px;
-    top: 40%;
+    top: 25px;
 }
-.map-marker{
-    height: 20px;
-    width: 15px;
-    position: absolute;
-    top: 55%;
-    left: 20px;
-}
-.location{
-    position: absolute;
-    left: 40px;
-    top: 55%;
-}
-.description{
-    position: absolute;
-    left: 20px;
-    bottom: 15%;
-}
-.wheel{
-    height: 20px;
-    width: 20px;
-    position: absolute;
-    bottom: 5%;
-    left: 25px;
-}
-.url{
-    position: absolute;
-    bottom: 5%;
-    left: 55px;
-}
-.connection-requests{ 
-    width: 260px;
-    height: 200px;
+.paragraph{
+    margin-left: 20px;
     margin-top: 50px;
-    margin-left: 30px;
-    border: 2px solid gray;
-    position: relative; 
 }
-.connection-header{
-    background-color: rgb(33, 33, 33);
-    height: 40px;
-    display: flex;
-    justify-content: center;
+.gearicon{
+    height: 20px;
+    margin-top: 15px;
     align-items: center;
 }
-.con-req{
-    color: white;
-}
-.two{
-    width: 20px;
+.map{
     height: 20px;
-    border-radius: 50%;
-    border: 2px solid rgb(126, 123, 123);
-    background-color: rgb(126, 123, 123);
-    color: white;
-    margin-right: 10px;
+    padding-right: 5px;
 }
-.education{
-    width: 500px;
-    height: 200px;
-    margin-left: 300px;
-    margin-top: 20px;
+.editprofile{
+    margin-left: 5px;
+}
+.container2{
     border: 2px solid gray;
-    position: relative;
+    width: 450px;
+    height: 200px;
+    margin-top: 20px;
 }
 .education-header{
-    background-color: rgb(33, 33, 33);
-    height: 50px;
     display: flex;
-    justify-content: start;
     align-items: center;
-    position: relative;
+    background-color: #333333;
+    height: 50px;
 }
-.educationh{
+.education-heading{
     color: white;
     margin-left: 20px;
 }
-.header1{
-    position: absolute;
-    left: 20px;
-    top: 60px;
-    color: black;
+.education-paragraph{
+    margin-top: 20px;
+    margin-left: 20px;
 }
-.paragraph{
-position: absolute;
-left: 20px;
-bottom: 30px;
-}
-.pcolor{
+.grey{
     color: gray;
 }
-
-.container-main{
-    display: flex;
-   
+.container3{
+    border: 2px solid gray;
+    width: 250px;
+    height: 190px;
 }
-.container-connection{
+.connection-requests{
+    background-color: #333333;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    color: white;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    margin-top: 30px;
 }
-.todd{
-    height: 40px;
-    width: 40px;
+.button-requests{
+    border: 2px solid #333333;
     border-radius: 50%;
+    height: 30px;
+    width: 30px;
 }
-.accept-circle{
-    height: 40px;
-    width: 40px;
+.second-section{
+    margin-left: 20px;
 }
-.close-circle{
-    height: 40px;
-    width: 40px;
+.container4{
+    border: 2px solid gray;
+    width: 250px;
+    height: 280px;
+    margin-top: 20px;
 }
-.container-connection2{
+.top-border{
+    border-top: 1px solid gray;
+    height: 50px;
+    margin-top: 18px;
+    width: 250px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    padding-top: 20px;
-
 }
-.phil{
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-}
-.close-circle1{
-    height: 40px;
-    width: 40px;
-}
-.accept-circle1{
-    height: 40px;
-    width: 40px;
+.viewmore{
+    margin-left: 20px;
 }
 .your-connections{
-    width: 260px;
-    height: 340px;
-    margin-top: 20px;
-    margin-left: 30px;
-    border: 2px solid gray;
-}
-.your-connectionsheader{
-    background-color: rgb(33, 33, 33);
-    height: 60px;
+    background-color: #333333;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    color: white;
 }
-.five-hundred{
-    width: 40px;
+.button-connections{
+    border: 2px solid #333333;
+    border-radius: 50%;
     height: 30px;
-    border-radius: 50%;
-    border: 2px solid rgb(126, 123, 123);
-    background-color: rgb(126, 123, 123);
-    color: white;
-}
-.your-connections-heading{
-    color: white;
-}
-.adrien{
-    height: 40px;
     width: 40px;
-    border-radius: 50%;
-    margin-right: 15px;
 }
-.anne{
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
+.flexname-button{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.flextodd{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
     margin-top: 10px;
-    margin-right: 15px;
+}
+.flexphil{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.phil{
+    border: 2px solid black;
+    border-radius: 50%;
+    height: 40px;
+}
+.todd{
+    border: 2px solid black;
+    border-radius: 50%;
+    height: 40px;
+}
+.philspace{
+    margin-left: 10px;
 }
 
-.alyanne{
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    margin-top: 10px;
-    margin-right: 15px;
-}
-.arry{
-    height: 40px;
-    width: 40px;
-    margin-top: 10px;
-    border-radius: 50%;
-    margin-right: 15px;
-}
-    
-.adrienflex{
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    margin-bottom: 10px;
-}
-.anneflex{
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    margin-bottom: 10px;
-}
-.alayneflex{
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    margin-bottom: 10px;
-}
-.arryflex{
-    display: flex;
-    justify-content: start;
-    align-items: center;
-}
-.container-yourconnections{
+.toddspace{
     margin-left: 10px;
-    margin-top: 30px;
 }
-.your-connections-footer{
-    width: 260px;
-    height: 50px;
-    border: 2px solid gray;
-    margin-bottom: 30px;
-    margin-left: 30px;
+.accept-decline{
+    display: flex;
+    padding: 10px;
+}
+.accept{
+    height: 40px;
+    margin-right: 10px;
+}
+.decline{
+    height: 40px;
+}
+.adrien{
+    border: 2px solid black;
+    border-radius: 50%;
+    height: 40px;
+    
+}
+.flexadrien{
     display: flex;
     align-items: center;
+    margin-left: 10px;
+    margin-top: 10px;
 }
-.view-more{
-    margin-left: 15px;
+.adrienspace{
+    margin-left: 10px;
+}
+.anne{
+    border: 2px solid black;
+    border-radius: 50%;
+    height: 40px;
+}
+.flexanne{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.annespace{
+    margin-left: 10px;
+}
+.alayne{
+    border: 2px solid black;
+    border-radius: 50%;
+    height: 40px;
+}
+.flexalayne{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.alaynespace{
+    margin-left: 10px;
 }

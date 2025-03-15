@@ -12,91 +12,87 @@
 <body>
     <header>
         <nav>
-            <section class="section1">
+            <section class="navigation">
                 <h1>Profile</h1>
-                <ul class="ul-link">
-                    <li><a class="link" href="#">Home</a></li>
-                    <li><a class="link" href="#">My Profile</a></li>
-                    <li><a class="link" href="#">Find Connections</a></li>
+                <ul class="nav-links">
+                    <li class="home">Home</li>
+                    <li class="myprofile">My Profile</li>
+                    <li class="findconnections">Find Connections</li>
                 </ul>
             </section>
-            <section class="section2">
-                <ul>
-                    <li><button class="btn">Sign Out</button></li>
-                </ul>
+            <section>
+                <button class="button-signout">Sign Out</button>
             </section>
         </nav>
     </header>
-
-    <main class="container-main">
-        <section class="container1">
-            <div class="profile-card">
-                <div class="profile-header">
-                    <img class="image" src="icons/user-circle.png" alt="profile image">
-                    <h2 class="name">Saher Kawas</h2> 
-                    <img class="map-marker" src="icons/map-marker.png" alt="map marker"><span class="location">Bethlehem</span>               
-                    <div class="description">
+        <section class="container">
+            <section class="first-section">
+                <div class="container1">
+                    <div class="profile-header"></div>
+                        <img class="user-circle" src="icons/user-circle.png" alt="user circle">
+                    <div class="paragraph">
+                        <h1>Saher Kawas</h1>
+                        <img class="map" src="icons/map-marker.png" alt=""><span>Bethlehem</span>
                         <p>Developer | Engineer | Problem Solver</p>
-                        <p>Master of shadows and the internet!</p>
+                        <p>Master of Shadows and the Internet!</p>
+                        <img class="gearicon" src="icons/gear.png" alt=""><span><a class="editprofile" href="#">edit profile</a></span>
                     </div>
-                    <img class="wheel" src="icons/gear.png" alt="wheel picture">
-                    <a class="url" href="https://www.google.com/">edit profile</a>
                 </div>
-            </div> 
-            <div class="education">
-                <div class="education-header">
-                    <h3 class="educationh">Education</h3>
+                <div class="container2">
+                    <div class="education-header">
+                        <h1 class="education-heading">Education</h1>
+                    </div>
+                    <div class="education-paragraph">
+                        <h1>Coding Dojo - Full Stack Bootcamp</h1>
+                        <p class="grey">Dec 2019 - Mar 2020</p>
+                        <p>Triple black belt Python, Mern, and c#...</p>
+                    </div>
                 </div>
-                <h1 class="header1">Coding Dojo - Fullstack Bootcamp</h1>
-                <div class="paragraph">
-                    <p class="pcolor">Dec 2019 - Mar 2020</p>
-                    <p>Triple black belt in Python, MERN, and C#…</p>
+            </section>
+            <section class="second-section">
+                <div class="container3">
+                    <div class="connection-requests">
+                        <button class="button-requests">2</button>
+                        <h1>Connections Requests</h1>
+                    </div>
+                    <div class="flexname-button">
+                        <div class="flextodd">
+                            <img class="todd" src="images 2/todd-s.jpg" alt="Todd"><span class="toddspace">Todd E</span>
+                        </div>
+                        <div class="accept-decline">
+                            <img class="accept" src="icons/accept-circle.png" alt="accept button">
+                            <img class="decline" src="icons/close-circle.png" alt="decline button">
+                        </div>
+                    </div>
+                    <div class="flexname-button">
+                        <div class="flexphil">
+                            <img class="phil" src="images 2/phil-s.jpg" alt="Phil"><span class="philspace">Phil K</span>
+                        </div>
+                        <div class="accept-decline">
+                            <img class="accept" src="icons/accept-circle.png" alt="accept button">
+                            <img class="decline" src="icons/close-circle.png" alt="decline button">
+                        </div>
                 </div>
-            </div>   
+                </div>
+                    <div class="container4">
+                        <div class="your-connections">
+                            <button class="button-connections">500+</button>
+                            <h1>Your Connections</h1>
+                        </div>
+                        <div class="flexadrien">
+                            <img class="adrien" src="images 2/adrien-s.jpg" alt="Adrien"><span class="adrienspace">Adrien D</span>
+                        </div>
+                        <div class="flexanne">
+                            <img class="anne" src="images 2/anne-s.jpg" alt="Anne"><span class="annespace">Anne J</span>
+                        </div>
+                        <div class="flexalayne">
+                            <img class="alayne" src="images 2/alayne-s.jpg" alt="Alayne"><span class="alaynespace">Alayne T</span>
+                        </div>
+                        <div class="top-border">
+                            <a class="viewmore" href="#">View More</a>
+                        </div>
+                    </div>
+            </section>
         </section>
-        <section class="container2">
-            <div class="connection-requests">
-                <div class="connection-header">
-                    <button class="two">2</button>
-                    <h3 class="con-req">Connection Requests</h3>
-                </div>
-                <div class="container-connection">
-                    <img class="todd" src="images 2/todd-s.jpg" alt="picture of Todd">
-                    <p>Todd E.</p>
-                    <img class="accept-circle" src="icons/accept-circle.png" alt="accept circle">
-                    <img class="close-circle" src="icons/close-circle.png" alt="close circle">
-                </div>
-                <div class="container-connection2">
-                    <img class="phil" src="images 2/phil-s.jpg" alt="picture of Phil">
-                    <p>Phil K.</p>
-                    <img class="accept-circle1" src="icons/accept-circle.png" alt="accept circle">
-                    <img class="close-circle1" src="icons/close-circle.png" alt="close circle">
-                </div>
-            </div>
-            <div class="your-connections">
-                <div class="your-connectionsheader">
-                    <button class="five-hundred">500+</button>
-                    <h3 class="your-connections-heading">Your Connections</h3>
-                </div>
-                <div class="container-yourconnections">
-                    <div class="adrienflex">
-                        <img class="adrien" src="images 2/adrien-s.jpg" alt="picture of Adrien"><span>Adrien S.</span>
-                    </div>
-                    <div class="anneflex">
-                    <img class="anne" src="images 2/anne-s.jpg" alt="picture of Anne"><span>Anne J.</span>
-                    </div>
-                    <div class="alayneflex">
-                        <img class="alyanne" src="images 2/alayne-s.jpg" alt="picture of Alayne"><span>Alayne S.</span>
-                    </div>
-                    <div class="arryflex">
-                        <img class="arry" src="images 2/arry-s.jpg" alt="picture of Alayne"><span>Arry Y.</span>
-                    </div>
-                </div>
-            </div>
-                <div class="your-connections-footer">
-                    <a class="view-more" href="https://www.google.com/">View More</a>
-                </div>
-        </section>
-    </main>
 </body>
 </html>
