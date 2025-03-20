@@ -1,9 +1,19 @@
-function press(7){
+function press(num){
     var button = document.querySelector("#display");
-    if(button.innerText === "0" && 7 !=="."){
-        button.innerText = 7; 
+    // console.log(button)
+    if(button.innerText === "0"){
+        button.innerText = num; 
     }
  else {
-    button.innerText += 7;
+    button.innerText = button.innerText+num;
 }
+}
+function setOP(op){
+    // console.log(op)
+    var operator= op
+    // console.log(operator)
+
+    var number1 = document.querySelector ("#display").innerText
+    console.log(number1)
+    
 }
