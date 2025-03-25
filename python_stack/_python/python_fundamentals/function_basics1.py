@@ -23,7 +23,7 @@ def a():
     print(10)
 print(a())
 #my prediction is 5
-# print("**********************")
+
 #5
 def a():
     print(5)

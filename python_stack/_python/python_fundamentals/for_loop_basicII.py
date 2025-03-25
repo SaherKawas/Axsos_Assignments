@@ -1,4 +1,4 @@
-# # Biggie Size 
+# Biggie Size 
 
 def biggie_size(arr):
     for i in range(len(arr)):
@@ -13,14 +13,16 @@ print(biggie_size([-1,3,-5,8]))
 def count_positives(arr):
     count=0
     for i in range(len(arr)):
-        if(i>0):
+        if(arr[i]>0):
             count+=1
-        arr[len(arr)-1]=count
+    arr[len(arr)-1]=count
+    if count==0:
+        arr[len(arr)-1]=1
     return arr
 print(count_positives([1,-3,4,5,-1]))
             
 
-# # Sum Total
+# Sum Total
 
 def sum_total(arr):
     total=0
@@ -30,7 +32,7 @@ def sum_total(arr):
 
 print(sum_total([1,4,5,2]))
 
-# # Average
+# Average
 
 def average(arr):
     total=0
@@ -63,7 +65,7 @@ def minimum(arr):
 print(minimum([3,1,-4,-5,3]))
 print(minimum([]))
 
-# # Maximum
+# Maximum
 
 def maximum(arr):
     if not arr:
