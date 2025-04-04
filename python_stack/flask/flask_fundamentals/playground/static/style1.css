@@ -1,0 +1,18 @@
+*{
+    padding: 0;
+    margin: auto;
+}
+
+.box{
+    height: 250px;
+    width: 250px;
+    background-color: aqua;
+    border: 2px solid black;
+    margin: 20px;
+    
+}
+body{
+    width: 1200px;
+    display: flex;
+    justify-content: space-evenly;
+}

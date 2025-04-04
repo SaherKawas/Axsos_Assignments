@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playground2</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    {%if level%}
+    <style>
+        .box{
+            background-color: {{color}};
+        }
+    </style>
+    {%endif%}
+    {%for i in range (number)%}
+    <div class="box"></div>
+    {% endfor %}
+    
+</body>
+</html>

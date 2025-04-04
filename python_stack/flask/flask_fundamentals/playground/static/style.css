@@ -1,0 +1,23 @@
+*{
+    padding: 0;
+}
+
+.box{
+    height: 250px;
+    width: 250px;
+    background-color: aqua;
+    border: 2px solid black;
+    margin: 20px;
+    
+}
+body{
+    width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    
+}
+
+
+
+
