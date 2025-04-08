@@ -9,7 +9,6 @@ def result(request):
         "location": request.POST["location"],
         "language": request.POST["language"],
         "comment": request.POST["comment"]
-
     }
         
     return render(request, "result.html",res)
