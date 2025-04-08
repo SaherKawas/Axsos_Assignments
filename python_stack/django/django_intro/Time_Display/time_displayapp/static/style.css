@@ -1,0 +1,28 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.first-container{
+    
+    margin: 0 auto;
+    margin-top: 50px;
+    border: 2px solid black;
+    height: 50px;
+    width: 200px;
+    display: flex;  
+    justify-content: center;  
+    align-items: center;
+}
+
+.time{
+    margin: 0 auto;
+    margin-top: 10px;
+    border: 2px solid black;
+    height: 50px;
+    width: 300px;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;  
+    align-items: center;
+}
