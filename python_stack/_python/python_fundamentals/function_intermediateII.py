@@ -65,8 +65,8 @@ print(iterateDictionary(students))
 
 def iterateDictionary2(first_name, students):
     for i in students:  
-        if first_name in i: 
-            print(i[first_name])
+        print(i[first_name])
+
     
 
 students = [
@@ -81,7 +81,6 @@ iterateDictionary2("first_name", students)
 
 def iterateDictionary2(last_name, students):
     for i in students:  
-            if last_name in i: 
                 print(i[last_name])
     
 
