@@ -6,7 +6,8 @@
     <title>Registration</title>
 </head>
 <body>
-    <form action="reg_post" method="post">
+    <!-- #action="reg_post" method="post" will be inside an object called request  -->
+    <form action="reg_post" method="post"> 
         {% csrf_token %}
         <label for="name">Name</label>
         <input type="text" name="name" id="name">
@@ -16,6 +17,7 @@
 
         <label for="address">Address</label>
         <input type="text" name="address" id="address">
+        <input type="hidden" name="id" id="">
 
         <input type="submit" value="Apply">
     </form>
