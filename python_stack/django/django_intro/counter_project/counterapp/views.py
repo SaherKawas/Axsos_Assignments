@@ -9,7 +9,8 @@ def index(request):
         request.session['counter']+=1
 
     context={
-        "count":request.session['counter']
+        "count":request.session['counter'],
+        
     }
     return render (request, 'index.html', context)
 
