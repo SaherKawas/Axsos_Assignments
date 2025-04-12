@@ -12,7 +12,8 @@ def root(request):
 
     context = {
         "message": message,
-        "attempts": request.session["attempts"]
+        "attempts": request.session["attempts"],
+        "randomnumber": request.session["randomnumber"]
     }
 
     request.session.pop("message", None)
