@@ -1,0 +1,62 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+.goldscore{
+    padding: 20px;
+
+}
+
+.boxes{
+    display: flex;
+    justify-content: space-between;
+}
+
+form{
+    border: 2px solid black;
+    padding: 10px;
+    text-align: center;
+    height: 200px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+h3{
+    padding: 20px;
+}
+
+#yourgold{
+border: 2px solid black;
+padding: 5px;
+}
+
+#activities{
+    border: 2px solid black;
+    height: 150px;
+    resize: none;
+}
+
+.submit{
+    color: black;
+    display: flex;
+    justify-content: end;
+    margin: 0 auto;
+    border: 2px solid black;
+    box-shadow: 2px 2px black;
+    background-color: white;
+    padding: 5px;
+}
+textarea{
+    height: 150px;
+    border: 2px solid black;
+    resize: none;
+}

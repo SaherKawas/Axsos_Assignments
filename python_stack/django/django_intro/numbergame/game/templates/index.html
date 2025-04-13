@@ -17,10 +17,23 @@
     <div>
         {% if message %}
             {% if message == "Correct!" %}
-            <div class="congratulations">
-                <p>{{randomnumber}} was the number!</p>
-                <a class="playagain" href="/play_again">Play again</a>
-            </div>
+                <div class="congratulations">
+                    <p>{{ randomnumber }} was the number!</p>
+                    <a class="playagain" href="/play_again">Play again</a>
+                </div>
+                <form action="/winners" method="post">
+                    {% csrf_token %}
+                    <label for="firstname">First Name</label>
+                    <input type="text" name="firstname" id="firstname">
+                    <label for="lastname">Last Name</label>
+                    <input type="text" name="lastname" id="lastname">
+                    <button>Submit</button>
+                </form>
+            {% elif message == "You lose" %}
+                <div class="lose">
+                    <p>{{ message }}</p>
+                    <a class="playagain" href="/play_again">Play again</a>
+                </div>
             {% elif message %}
                 <p class="fail">{{ message }}</p>
             {% endif %}
