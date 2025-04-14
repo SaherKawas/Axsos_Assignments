@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponse, redirect
+from . import models
 
 def root(request):
     return HttpResponse("This is my first Django Project!")
@@ -28,12 +29,16 @@ def reg_form_post(request):
         name=request.POST['name']
         phonenumber=request.POST['phonenumber']
         address=request.POST['address']
-        id=request.POST['id']
+    
         print(name)
         print(phonenumber)
         print(address) #we print to see if the data reached the backend from the frontend
+
+        myuser= models.create_user(request.POST) 
+
         request.session['name']= name #this is the name filled in the registration form
         request.session['is_logged']=True
+        request.session['id']=myuser.id
         return redirect("/home") # the methods in python should have a return
     else:
         return redirect("/matches/11/FR")
@@ -47,6 +52,9 @@ def reg_form_post(request):
 
 def home_page(request):
     if "is_logged" in request.session:
+        context={
+            'users': models.User.objects.all()
+        }
         return render(request, "home.html")
     else:
         return redirect('/login')
@@ -54,8 +62,39 @@ def home_page(request):
 def log_out(request):
     del request.session['name']
     del request.session['is_logged']
+    del request.session['id']
     return redirect('/')
 
+def update_user(request):
+    context={
+        'user': models.get_user(request.session['id'])
+    }
+    return render(request, "update.html", context)
+
+# ORM post re
+def update_post(request):
+
+    if request.method=="POST" and "is_logged" in request.session:
+            name=request.POST['new_name']
+            phonenumber=request.POST['new_phonenumber']
+            address=request.POST['new_address']
+            id=request.POST['user_id']
+        
+            print(name)
+            print(phonenumber)
+            print(address) #we print to see if the data reached the backend from the frontend
+
+            updateduser= models.get_user(id) 
+            updateduser.name=name
+            updateduser.phonenumber=phonenumber
+            updateduser.address=address
+
+            updateduser.save()
+
+            
+            return redirect("/home") # the methods in python should have a return
+    else:
+        return redirect("/matches/11/FR")
 
     
 

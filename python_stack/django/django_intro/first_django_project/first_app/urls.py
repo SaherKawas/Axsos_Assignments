@@ -9,7 +9,9 @@ urlpatterns = [
     path("reg", views.reg_form),
     path("reg_post", views.reg_form_post),
     path("home", views.home_page),
-    path("log_out", views.logout)
+    path("log_out", views.logout),
+    path("update", views.update_user),
+    path('update_post', views.update_post)
 
 ]
 

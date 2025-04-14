@@ -6,11 +6,14 @@
     <title>Home</title>
 </head>
 <body>
-    <h1>Home {{request.session.name}}</h1>
-
+    <h1>Hello {{request.session.name}}</h1>
+    <a href="update/">Update user</a>
     <form action="logout" method="post">
         {%csrf_token%}
         <input type="submit" value="Logout">
     </form>
+    {% for user in users%}
+    <p>{user.name}</p>
+    {% endfor %}
 </body>
 </html>

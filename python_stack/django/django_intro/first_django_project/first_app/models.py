@@ -6,3 +6,12 @@ class User(models.Model): #this is not a normal class, this is a class that inhe
     address= models.TextField()
     created_at=models.DateTimeField(auto_now_add=True) #django will reflect it in the database when you create a row
     updated_at=models.DateTimeField(auto_now=True)
+
+def get_all_users():
+    return User.objects.all()
+
+def get_user (id):
+    return User.objects.get(id=id)
+
+def create_user(post):
+    return User.objects.create(name=post["name"], phonenumber=post['phonenumber'], address=post['address'])
