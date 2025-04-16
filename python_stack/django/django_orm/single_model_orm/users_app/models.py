@@ -10,3 +10,6 @@ class User(models.Model):
 
 def create_user(post):
     return User.objects.create(firstname=post["firstname"], lastname=post['lastname'], email=post['email'], age=post['age'])
+
+def get_user (id):
+    return User.objects.get(id=id)

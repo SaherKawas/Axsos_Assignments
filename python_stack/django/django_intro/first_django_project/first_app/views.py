@@ -5,6 +5,7 @@ def root(request):
     return HttpResponse("This is my first Django Project!")
 
 def root(request):
+    models.user.obrjects.create(first_name='test', last_name='test test')
     return render(request, "index.html")
  
 def login(request):
@@ -80,7 +81,7 @@ def update_post(request):
             address=request.POST['new_address']
             id=request.POST['user_id']
         
-            print(name)
+            print(name) 
             print(phonenumber)
             print(address) #we print to see if the data reached the backend from the frontend
 
@@ -95,9 +96,29 @@ def update_post(request):
             return redirect("/home") # the methods in python should have a return
     else:
         return redirect("/matches/11/FR")
+    
+def delete_form(request):
 
+    if request.method=="POST":
+        if "id" in request.session:
+            models.delete_user_from_DB(request.session['id'])
+            return  redirect('/home')
+        else:
+            return redirect('/')
+    else:
+        return redirect('/')
+    
+def delete_by_user_id(request):
+    if request.method=="POST":
+        models.delete_user_from_DB(request.POST['user_id'])
     
 
+def addaddress(request):
+    return render (request, "addaddress.html")
 
+def address_add_form(request):
+    city=request.post['ccity']
+    country=request.POST['country']
+    mohammadkhaseeb=
 
-        
+    models.Address.objects.create(city=city, country=country, )

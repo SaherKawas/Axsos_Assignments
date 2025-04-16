@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %} 
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Dojos and Ninjas</title>
+</head>
+<body>
+    <section>
+        <div>
+            <h1>Add a dojo</h1>
+            <form action="adddojo" method="post">
+                {% csrf_token %}
+                <div>
+                    <label for="name">Name</label>
+                    <input type="text" name="name" required>
+                </div>
+                <div>
+                    <label for="city">City</label>
+                    <input type="text" name="city" required>
+                </div>  
+                <div>
+                    <label for="state">State</label>
+                    <input type="text" name="state" required>
+                </div>
+                <button>Add</button>
+            </form>
+        </div>
+        <div>
+            <h1>Add a ninja</h1>
+            <form action="addninja" method="post" class="box">
+                {% csrf_token %}
+                <div>
+                    <label for="">First Name</label>
+                    <input type="text" name="firstname" required>
+                </div>
+                <div>
+                    <label for="">Last Name</label>
+                    <input type="text" name="lastname" required>
+                </div>  
+                <div>
+                    <label for="">Dojo</label>
+                    <select class="" name="location" id="location">
+                        {% for dojo in dojos%}
+                        <option value={{dojo.id}}>{{dojo.name}}, {{dojo.city}}, {{dojo.state}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <button>Add</button>
+            </form>
+        </div>
+    </section>
+    <section class="second-section">
+        <h1>All the dojos</h1>
+        {% for dojo in dojos %}
+            <p>Ninjas at the {{ dojo.name }} in {{dojo.city}}</p>
+            <ul>
+                {% for ninja in ninjas %}
+                    {% if ninja.dojo.id == dojo.id %}
+                        <li>- {{ ninja.first_name }} {{ ninja.last_name }}</li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </section>
+</body>
+</html>

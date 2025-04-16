@@ -8,12 +8,32 @@
 <body>
     <h1>Hello {{request.session.name}}</h1>
     <a href="update/">Update user</a>
+    <a href="addaddress">add address</a>
     <form action="logout" method="post">
         {%csrf_token%}
         <input type="submit" value="Logout">
     </form>
-    {% for user in users%}
-    <p>{user.name}</p>
-    {% endfor %}
+    <table>
+        <th>
+            <tr>ID</tr>
+            <tr>Name</tr>
+            <tr>Phonenumber</tr>
+            <tr>Address</tr>
+            <tr>Delete</tr>
+        </th>
+        <th>
+            {% for user in users%}
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.phonenumber}}</td>
+            <td>{{user.address}}</td>
+            <td>Delete</td>
+            <form action="deleteform">
+                <input type="submit" value="Delete">
+            </form>
+            {% endfor %}
+        </th>
+    </table>
+    
 </body>
 </html>
