@@ -26,4 +26,10 @@ def create_user(post):
 def delete_user_from_DB(id):
     my_user= User.objects.get(id=id)
     my_user.delete()
+
+def test_many_to_many(book id, publisher_id):
+    mybook=Book.objects. get(id=book_id)
+    mypublisher=Publisher.object.get(id=publisher_id)
+
+    mybook.publishers.add(mypublisher) #is the same as mypublisher.books.add(mybook)
     

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bookdetail.css' %}">
+    <title>Book detail</title>
+</head>
+<body>    
+    <h1>{{book.title}}</h1>
+    <p>ID :{{book.id}}</p>
+    <div class="description-group">
+        <label for="">Description:</label>
+        <textarea name="" id="">{{book.description}}</textarea>
+    </div>
+    <h2>Authors</h2>
+    <ul>
+        {%for author in book.authors.all%}
+        <li>{{ author.first_name }} {{ author.last_name }}</li>
+        {%endfor%}
+    </ul>
+    <form action="/authorlist/{{book.id}}" method="post">
+        {%csrf_token%}
+        <select name="list" >
+            {%for author in authors%}
+            <option value="{{author.id}}">{{author.first_name}} {{author.last_name}}</option>
+           {% endfor%}
+        </select>
+        <button>Add</button>
+    </form>
+</body>
+</html>

@@ -10,13 +10,8 @@ def index(request):
     }
     return render( request, "index.html", context)
 
-
-
 def formdojo(request):
     if request.method=="POST":
-        name=request.POST['name']
-        city=request.POST['city']
-        state=request.POST['state']
         
         user= models.create_dojo(request.POST)
         request.session['id']=user.id
@@ -28,12 +23,9 @@ def formdojo(request):
 
 def add_ninja(request):
     if request.method=="POST":
-        firstname=request.POST['firstname']
-        lastname=request.POST['lastname']
-        dojo_id=request.POST['location']
 
-        ninja= models.create_ninja(request.POST)
+        models.create_ninja(request.POST)
         
         return redirect('/')
-    else:
-        return redirect('/')
+    
+    return redirect('/')

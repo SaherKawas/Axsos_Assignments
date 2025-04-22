@@ -2,10 +2,11 @@ from django.db import models
 
 class Book(models.Model):
     title=models.CharField(max_length=255)
-    desc=models.TextField()
+    description=models.TextField()
     created_at=models.DateTimeField(auto_now_add=True) 
     updated_at=models.DateTimeField(auto_now=True)
-    # authors
+
+
 class Author(models.Model):
     first_name=models.CharField(max_length=45)
     last_name=models.CharField(max_length=45)
@@ -15,7 +16,7 @@ class Author(models.Model):
     updated_at=models.DateTimeField(auto_now=True)
 
 def create_book(post):
-    return Book.objects.create(title=post["title"], desc=post['description'])
+    return Book.objects.create(title=post['title'], description=post['description'])
 
 def getbook(id):
     return Book.objects.get(id=id)
@@ -35,6 +36,3 @@ def makeconenctions(id1,id2):
     print(auther.id)
     print(book.id)
     auther.books.add(book)
-# def addauthortobook(post):
-#    auth= Author.objects.get(id = post['list'])
-#    book = Book.objects.get(id = post[''])

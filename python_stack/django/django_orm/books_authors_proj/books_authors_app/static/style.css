@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+}
+section{
+    margin-top: 50px;
+}
+
+h1{
+    padding: 10px;
+    text-align: center;
+}
+input{
+    border: 2px solid black;
+}
+#description{
+    border: 2px solid black;
+    resize: none;
+    margin-top: 10px;
+    height: 100px;
+    width: 200px;
+}
+
+table{
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 200px;
+    border-collapse: collapse;
+    border: 2px solid black;
+}
+
+th, td {
+    border: 2px solid black;
+    padding: 8px;
+    text-align: left;
+}
+.description-group{
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+}

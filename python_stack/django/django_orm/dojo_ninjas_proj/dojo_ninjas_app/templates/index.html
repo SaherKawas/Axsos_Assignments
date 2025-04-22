@@ -3,67 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% load static %} 
+    {% load static %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <title>Dojos and Ninjas</title>
 </head>
-<body>
-    <section>
-        <div>
-            <h1>Add a dojo</h1>
-            <form action="adddojo" method="post">
-                {% csrf_token %}
-                <div>
-                    <label for="name">Name</label>
-                    <input type="text" name="name" required>
+<body class="bg-light">
+    <div class="container py-5">
+        <section class="row g-4">
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h3 class="card-title mb-4">Add a Dojo</h3>
+                        <form action="adddojo" method="post">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" name="name" id="name" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="city" class="form-label">City</label>
+                                <input type="text" name="city" id="city" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="state" class="form-label">State</label>
+                                <input type="text" name="state" id="state" class="form-control" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Add</button>
+                        </form>
+                    </div>
                 </div>
-                <div>
-                    <label for="city">City</label>
-                    <input type="text" name="city" required>
-                </div>  
-                <div>
-                    <label for="state">State</label>
-                    <input type="text" name="state" required>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h3 class="card-title mb-4">Add a Ninja</h3>
+                        <form action="addninja" method="post">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="firstname" class="form-label">First Name</label>
+                                <input type="text" name="firstname" id="firstname" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="lastname" class="form-label">Last Name</label>
+                                <input type="text" name="lastname" id="lastname" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="location" class="form-label">Dojo</label>
+                                <select name="location" id="location" class="form-select">
+                                    {% for dojo in dojos %}
+                                        <option value="{{ dojo.id }}">{{ dojo.name }}, {{ dojo.city }}, {{ dojo.state }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Add</button>
+                        </form>
+                    </div>
                 </div>
-                <button>Add</button>
-            </form>
-        </div>
-        <div>
-            <h1>Add a ninja</h1>
-            <form action="addninja" method="post" class="box">
-                {% csrf_token %}
-                <div>
-                    <label for="">First Name</label>
-                    <input type="text" name="firstname" required>
-                </div>
-                <div>
-                    <label for="">Last Name</label>
-                    <input type="text" name="lastname" required>
-                </div>  
-                <div>
-                    <label for="">Dojo</label>
-                    <select class="" name="location" id="location">
-                        {% for dojo in dojos%}
-                        <option value={{dojo.id}}>{{dojo.name}}, {{dojo.city}}, {{dojo.state}}</option>
+            </div>
+        </section>
+
+        <section class="mt-5">
+            <h2 class="mb-4">All the Dojos</h2>
+            {% for dojo in dojos %}
+                <div class="mb-3">
+                    <h5 class="text-decoration-underline">Ninjas at the {{ dojo.name }} in {{ dojo.city }}</h5>
+                    <ul class="list-group list-group-flush">
+                        {% for ninja in ninjas %}
+                            {% if ninja.dojo.id == dojo.id %}
+                                <li class="list-group-item">- {{ ninja.first_name }} {{ ninja.last_name }}</li>
+                            {% endif %}
                         {% endfor %}
-                    </select>
+                    </ul>
                 </div>
-                <button>Add</button>
-            </form>
-        </div>
-    </section>
-    <section class="second-section">
-        <h1>All the dojos</h1>
-        {% for dojo in dojos %}
-            <p>Ninjas at the {{ dojo.name }} in {{dojo.city}}</p>
-            <ul>
-                {% for ninja in ninjas %}
-                    {% if ninja.dojo.id == dojo.id %}
-                        <li>- {{ ninja.first_name }} {{ ninja.last_name }}</li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-        {% endfor %}
-    </section>
+            {% endfor %}
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
