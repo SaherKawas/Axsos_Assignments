@@ -27,19 +27,26 @@ def reg_form(request):
 
 def reg_form_post(request):
     if request.method=="POST":
-        name=request.POST['name']
-        phonenumber=request.POST['phonenumber']
-        address=request.POST['address']
-    
-        print(name)
-        print(phonenumber)
-        print(address) #we print to see if the data reached the backend from the frontend
 
-        myuser= models.create_user(request.POST) 
+        errors=models.User.objects.reg_validator(request.POST)
+        if len(errors)>0: #if the length is a number >0 it means there is an error or more.
+            for key, value in errors.items():
+                messages.error(request, value)
+            return redirect('/reg')
+        else:
+            name=request.POST['name']
+            phonenumber=request.POST['phonenumber']
+            address=request.POST['address']
+        
+            print(name)
+            print(phonenumber)
+            print(address) #we print to see if the data reached the backend from the frontend
 
-        request.session['name']= name #this is the name filled in the registration form
-        request.session['is_logged']=True
-        request.session['id']=myuser.id
+            myuser= models.create_user(request.POST) 
+
+            request.session['name']= name #this is the name filled in the registration form
+            request.session['is_logged']=True
+            request.session['id']=myuser.id
         return redirect("/home") # the methods in python should have a return
     else:
         return redirect("/matches/11/FR")
@@ -122,3 +129,14 @@ def address_add_form(request):
     mohammadkhaseeb=
 
     models.Address.objects.create(city=city, country=country, )
+
+def login_form(request):
+    if request.method == 'POST':
+        name=request.POST['name']
+        password=request.POST['password']
+        models.log_check(request.POST)
+    else:
+        context={
+            'msg': 'Bad request'
+        }
+        return render(request, 'index.html')

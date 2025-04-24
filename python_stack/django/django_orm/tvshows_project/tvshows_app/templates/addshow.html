@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Add New Show</title>
+</head>
+<body>
+    <div class="container">
+        <section class="first-section">
+            <h1>Add a New Show</h1>
+            <form action="/createtvshow/" method="post">
+                {%csrf_token%}
+                <div>
+                    <label for="title">Title</label>
+                    <input class="boxes" type="text" name="title">
+                </div>
+                <div>
+                    <label for="network">Network</label>
+                    <input class="boxes" type="text" name="network">
+                </div>
+                <div>
+                    <label for="releasedate">Release Date</label>
+                    <input class="boxes" type="date" name="releasedate" id="">
+                </div>
+                <div>
+                    <label for="description">Description</label>
+                    <textarea name="description" id=""></textarea>
+                </div>
+                <button type="submit">Create</button>
+            </form>
+        </section>
+        <section>
+            <a href="/shows">Go Back</a>
+        </section>
+    </div>
+</body>
+</html>

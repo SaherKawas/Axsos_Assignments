@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <section class="first-section">
+            <h1>Edit Show</h1>
+            <form action="/tvshowedit/{{show.id}}" method="post">
+                {%csrf_token%}
+                <div>
+                    <label for="title">Title</label>
+                    <input class="boxes" type="text" name="new_title" value="{{show.title}}">
+                </div>
+                <div>
+                    <label for="network">Network</label>
+                    <input class="boxes" type="text" name="new_network" value="{{show.network}}">
+                </div>
+                <div>
+                    <label for="releasedate">Release Date</label>
+                    <input class="boxes" type="date" name="new_releasedate" value="{{show.releasedate}}">
+                </div>
+                <div>
+                    <label for="description">Description</label>
+                    <textarea name="new_description" id="">{{show.description}}</textarea>
+                </div>
+                <input type="hidden" name={{show.id}} >
+                <button type="submit">Update</button>
+            </form>
+            <div>
+                <a href="/displaytvshow/{{show.id}}">Go to Show</a>
+            </div>
+        </section>
+        <section>
+            <a href="/shows">Go Back</a>
+        </section>
+    </div>
+</body>
+</html>

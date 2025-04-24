@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>TV show Display</title>
+</head>
+<body>
+    <section class="tvshow">
+        <div class="tv">
+            <h1>TV Show: {{show.id}}</h1>
+            <p>Title: {{show.title}}</p>
+            <p>Newtork: {{show.network}}</p>
+            <p>Release Date: {{show.release_date}}</p>
+            <p class="tv">Description: {{show.description}}</p>
+            <p>Last Updated: {{show.updated_at}}</p>
+            <form action="/edittvshow/{{show.id}}" method="post">
+                {% csrf_token %}
+                <button type="submit">Edit</button>
+            </form> 
+            <form action="/deleteshow/{{show.id}}/" method="post">
+                {% csrf_token %}
+                <button type="submit">Delete</button>
+            </form>
+        </div>
+        <div>
+            <a href="/shows">Go Back</a>
+        </div>
+    </section>
+</body>
+</html>
