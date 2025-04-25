@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Courses</title>
+</head>
+<body>
+    <section class="section_one">
+        <h1>Add a new course</h1>
+        <form action="addcourse" method="post">
+            {% csrf_token %}
+            <label for="name">Name: </label>
+            <input type="text" name="name" id="">
+            <label for="description">Description</label>
+            <input type="text" name="description" id="">
+            <button>Add</button>
+        </form>
+        {% if messages %}
+        <ul class="messages">    
+            {% for message in messages %}    
+                <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </section>
+    <section class="section_two">
+        <h1>Courses</h1>
+        <table>
+            <tr>
+              <th>Course Name</th>
+              <th>Description</th>
+              <th>Date Added</th>
+              <th>Action</th>
+            </tr>
+            {%for course in courses%}
+            <tr>
+              <td>{{course.name}}</td>
+              <td>{{course.description}}</td>
+              <td>{{course.updated_at}}</td>
+              <td><a href="/deletecoursedisplay/{{course.id}}/">Remove</a></td>
+            </tr>
+            {%endfor%}
+    </section>
+</body>
+</html>
