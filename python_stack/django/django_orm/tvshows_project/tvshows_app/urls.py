@@ -10,4 +10,5 @@ urlpatterns = [
     path('edittvshow/<int:id>', views.edit_tvshow),
     path('tvshowedit/<int:id>', views.tvshow_edit),
     path('deleteshow/<int:id>/', views.delete_show)
+    
     ]

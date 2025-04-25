@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from . import models
+from django.contrib import messages
+from .models import Show
 
 def index(request): 
     return redirect('/shows')
@@ -15,8 +17,16 @@ def add_new_show(request):
 
 def create_tvshow(request):
     if request.method == "POST":
-        new_show=models.create_tv_show(request.POST)
-        return redirect(f'/displaytvshow/{new_show.id}')
+        errors=models.Show.objects.show_validator(request.POST)
+        if len(errors)>0: 
+            for key, value in errors.items():
+                messages.error(request, value)
+            return redirect('/createtvshow')
+        else:
+            new_show=models.create_tv_show(request.POST)
+            return redirect(f'/displaytvshow/{new_show.id}')
+    else:
+        return render(request, 'addshow.html')
     
 def display_tvshow(request, id):
     context={
@@ -33,9 +43,14 @@ def edit_tvshow(request, id):
 
 def tvshow_edit(request, id):
     if request.method=='POST':
-        show=models.edit_tv_show(request.POST, id)
-        return redirect(f'/displaytvshow/{id}')
-    
+        errors=models.Show.objects.updateshow_validator(request.POST)
+        if len(errors)>0: 
+            for key, value in errors.items():
+                messages.error(request, value)
+            return redirect(f'/edittvshow/{id}')
+        else:
+            show=models.edit_tv_show(request.POST, id)
+            return redirect(f'/displaytvshow/{id}')
     else:
         return redirect('/shows')
 

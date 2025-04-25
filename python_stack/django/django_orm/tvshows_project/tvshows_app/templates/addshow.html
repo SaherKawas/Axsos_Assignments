@@ -11,6 +11,13 @@
     <div class="container">
         <section class="first-section">
             <h1>Add a New Show</h1>
+            {% if messages %}
+            <ul class="messages">    
+                {% for message in messages %}    
+                    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+                {% endfor %}
+            </ul>
+            {% endif %}
             <form action="/createtvshow/" method="post">
                 {%csrf_token%}
                 <div>

@@ -1,5 +1,27 @@
 from django.db import models
 
+class ShowManager(models.Manager):
+    def show_validator(self, post):
+        errors={}
+        if len(post['title'])<2:
+            errors['title']="Title should be at least two characters"
+        if len(post['network'])<3:
+            errors['network']="Network should be at least three characters"
+        if len(post['description'])<10:
+            errors['description']="Description should be at least ten characters"
+        return errors
+    
+    def updateshow_validator(self, post):
+        errors={}
+        if len(post['new_title'])<2:
+            errors['new_title']="Title should be at least two characters"
+        if len(post['new_network'])<3:
+            errors['new_network']="Network should be at least three characters"
+        if len(post['new_description'])<10:
+            errors['new_description']="Description should be at least ten characters"
+        return errors
+
+
 class Show(models.Model):
     title=models.CharField(max_length=255)
     network=models.CharField(max_length=255)
@@ -7,6 +29,7 @@ class Show(models.Model):
     description=models.TextField()
     created_at=models.DateTimeField(auto_now_add=True) 
     updated_at=models.DateTimeField(auto_now=True)
+    objects=ShowManager()
 
 def create_tv_show(post):
     return Show.objects.create(title=post['title'], network=post['network'], release_date=post['releasedate'], description=post['description'])

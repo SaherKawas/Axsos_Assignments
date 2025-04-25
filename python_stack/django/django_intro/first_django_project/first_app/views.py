@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponse, redirect
 from . import models
+from django.contrib import messages
 
 def root(request):
     return HttpResponse("This is my first Django Project!")
