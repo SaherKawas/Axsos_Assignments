@@ -16,7 +16,7 @@ urlpatterns = [
     path("delete_user_by_user_id", views.delete_by_user_id),
     path('addaddress', views.addaddress),
     path('addressform', views.address_add_form),
-    path('login_form'), views.login_form
+    path('login_form', views.login_form)
 
 ]
 

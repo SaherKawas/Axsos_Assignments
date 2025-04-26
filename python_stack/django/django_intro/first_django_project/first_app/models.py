@@ -54,7 +54,7 @@ def test_many_to_many(book id, publisher_id):
 
     mybook.publishers.add(mypublisher) #is the same as mypublisher.books.add(mybook)
     
-def login_check(postdata):
+def log_check(postdata):
     name=postdata['name']
     password=postdata['password']
     user=User.objects.get(name=name)
