@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite Books</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <h1 class="display-4">Welcome, {{user.firstname}}!</h1>
+            </div>
+            <div class="col-md-6 text-right">
+                <a href="logout" class="btn btn-danger">Logout</a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <section>
+                    <h2>Add a Favorite Book</h2>
+                    <form action="addbook" method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="title">Title</label>
+                            <input type="text" name="title" id="title" class="form-control" placeholder="Enter book title">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <input type="text" name="description" id="description" class="form-control" placeholder="Enter book description">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Book</button>
+                    </form>
+                </section>
+            </div>
+
+            <div class="col-md-6">
+                <section>
+                    <h2>All Books</h2>
+                    <ul class="list-group">
+                        {% for book in books %}
+                            <li class="list-group-item">
+                                <a href="#" class="btn btn-link">{{book.title}}</a>
+                                <p class="text-muted">added by {{book.userid}}</p>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

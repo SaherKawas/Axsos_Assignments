@@ -14,9 +14,10 @@ def register_user(request):
             for key, value in errors.items():
                 messages.error(request, value)
             return redirect('/')
+        
         password = request.POST['password']
-
         pw_hash = bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
+
         post= {
             'firstname': request.POST['firstname'],
             'lastname': request.POST['lastname'],
@@ -31,6 +32,7 @@ def register_user(request):
     
 def login_user(request):
     if request.method == 'POST':
+        
         email = request.POST['email']
         password = request.POST['password']
 
@@ -39,18 +41,17 @@ def login_user(request):
             context = {
                 'user': models.getuser(email=email)
             }
-            return render(request, 'success.html', context) 
+            return render(request, 'success.html', context)
         else:
-            context = {
-                'msg': 'Invalid email or password'
-            }
-            return render(request, 'index.html', context) 
+            messages.error(request, 'Invalid email or password')
+            return redirect('/') 
+        
     else:
-        context = {
-            'msg': 'Bad request'
-        }
-        return render(request, 'index.html', context)
+        
+        messages.error(request, 'Bad request')
+        return redirect('/')
     
+
 def logout(request):
     request.session.flush()
     return redirect('/')

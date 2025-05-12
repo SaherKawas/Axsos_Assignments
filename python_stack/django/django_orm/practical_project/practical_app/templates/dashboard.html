@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Dashboard</title>
+</head>
+<body>
+    <section>
+        <div class="nav">
+            <h1>Welcome {{user.firstname}} to Developers Dashboard</h1>
+            <a href="loggedout">Logout</a>
+        </div>
+    </section>
+    <div>
+        <a class="buttoncreate" href="createproject">Create Project +</a>
+    </div>
+    <div>
+        <table>
+            <tr>
+              <th>ID</th>
+              <th>Project name</th>
+              <th>Project owner</th>
+              <th>Action</th>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+    </div>
+</body>
+</html>

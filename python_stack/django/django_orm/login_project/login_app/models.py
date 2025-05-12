@@ -19,6 +19,7 @@ class LoginManager(models.Manager):
         return errors
 
 
+
 class Login(models.Model):
     firstname=models.CharField(max_length=255)
     lastname=models.CharField(max_length=255)
@@ -34,14 +35,15 @@ def create_user(post):
 def log_check(post):
     email=post['email']
     password=post['password']
-    user=Login.objects.get(email=email)
+    user = Login.objects.filter(email=email).first()
+    if not user:
+        print('user not found')
+        return False
     if bcrypt.checkpw(password.encode(), user.password.encode()):
         print('password match')
         return True
     else:
         print('password mismatch')
-    hash1 = bcrypt.hashpw('password'.encode(), bcrypt.gensalt()).decode()
-    print(hash1)
     return False
 
 def getuser(email):

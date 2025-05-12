@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Create Project</title>
+</head>
+<body>
+    <div class="nav">
+        <h1>Hello {{users.firstname}} {{users.lastname}}</h1>
+        <a href="loggedout">Logout</a>
+    </div>
+    <h1>Edit {{}}</h1>
+            {% if messages %}
+            <ul class="messages">    
+                {% for message in messages %}    
+                    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+                {% endfor %}
+            </ul>
+            {% endif %}
+    <form action="projectdetails" method="post">
+        {% csrf_token %}
+        <label for="projectname">Project Name</label>
+        <input type="text" name="newprojectname" value="{{}}">
+        <label for="description">Description</label>
+        <textarea name="new_description" id="">{{}}</textarea>
+        <label for="date">Start Date</label>
+        <input type="date" name="newstartdate" value="{{}}">
+        <label for="enddate">End Date</label>
+        <input type="date" name="newenddate" value="{{}}">
+        <a href="">Delete</a>
+        <button>Save</button>
+        <a href="dashboard">Back</a>
+    </form>
+</body>
+</html>
