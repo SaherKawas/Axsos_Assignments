@@ -6,13 +6,14 @@ public class Order {
     private ArrayList<Item> items;
 
     public Order() {
-        this("Guest");
+        this.name="Guest";
+        this.items= new ArrayList<item>;
+
     }
     
     public Order(String name) {
         this.name = name;
-        this.ready = false;
-        this.items = new ArrayList<Item>();
+        
     }
 
     public void addItem(Item item) {
@@ -29,8 +30,8 @@ public class Order {
 
     public double getOrderTotal() {
         double total = 0.0;
-        for (Item item : this.items) {
-            total += item.getPrice(); 
+        for (Item fo : this.items) {
+            total += fo.getPrice(); 
         }
         return total;
     }
