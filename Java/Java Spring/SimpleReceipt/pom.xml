@@ -8,12 +8,12 @@
 		<version>3.5.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.axsos.hellohuman</groupId>
-	<artifactId>HelloHuman</artifactId>
+	<groupId>com.axsos.simplereceipt</groupId>
+	<artifactId>SimpleReceipt</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>HelloHuman</name>
-	<description>Hello Human assignment</description>
+	<name>SimpleReceipt</name>
+	<description>Simple Receipt assignment</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -37,20 +37,18 @@
 		</dependency>
 		
 		<dependency>
-                <groupId>org.apache.tomcat.embed</groupId>
-                <artifactId>tomcat-embed-jasper</artifactId>
-        </dependency>
+	        <groupId>org.apache.tomcat.embed</groupId>
+	        <artifactId>tomcat-embed-jasper</artifactId>
+	    </dependency>
+	    <dependency>
+	        <groupId>jakarta.servlet.jsp.jstl</groupId>
+	        <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+	    </dependency>
+	    <dependency>
+	        <groupId>org.glassfish.web</groupId>
+        	<artifactId>jakarta.servlet.jsp.jstl</artifactId>
+    	</dependency>
 
-		<dependency>
-		    <groupId>jakarta.servlet.jsp.jstl</groupId>
-		    <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
-		</dependency>
-		
-		<dependency>
-		    <groupId>org.glassfish.web</groupId>
-		    <artifactId>jakarta.servlet.jsp.jstl</artifactId>
-		</dependency>
-		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
