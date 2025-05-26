@@ -29,7 +29,6 @@ public class SimpleReceiptApplication {
         model.addAttribute("description", description);
         model.addAttribute("vendor", vendor);
     
-    
         return "index.jsp";
     }
 
