@@ -33,15 +33,18 @@ public class BookApiService {
     }
 	
 	public BookApi updateBook(Long id, String title, String desc, String lang, Integer numOfPages) {
-		
-		Optional<BookApi> optionalBook = bookApiRepository.findById(id);
-        if(optionalBook.isPresent()) {
-        	BookApi book = new BookApi(title, desc, lang, numOfPages);
-        	book.setId(id);
-            return bookApiRepository.save(book);
-        }else{
-            return null;
-        }
+	    Optional<BookApi> optionalBook = bookApiRepository.findById(id);
+
+	    if (optionalBook.isPresent()) {
+	        BookApi book = optionalBook.get(); 
+	        book.setTitle(title);
+	        book.setDescription(desc);
+	        book.setLanguage(lang);
+	        book.setNumberOfPages(numOfPages);
+	        return bookApiRepository.save(book); 
+	    } else {
+	        return null;
+	    }
 	}
     
     public void deleteBook(Long id) {

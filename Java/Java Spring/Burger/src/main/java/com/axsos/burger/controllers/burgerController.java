@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.axsos.burger.models.Burger;
@@ -33,5 +34,20 @@ public class burgerController {
 		burgerService.createBurger(burger);
 		return "redirect:/";
 	}
-
+	
+	@GetMapping("/edit/{id}")
+    public String edit(@PathVariable Long id, Model model) {
+        Burger burgers = burgerService.findBurger(id);
+        model.addAttribute("burger", burgers);
+        return "edit.jsp";
+	}
+	
+	@PostMapping("/edit/{id}")
+    public String edit(@Valid @ModelAttribute Burger burger,BindingResult result) {
+        if (result.hasErrors()) {
+            return "index.jsp";
+        }
+        burgerService.updateBurger(burger);
+        return "redirect:/";
+    	}
 }

@@ -6,93 +6,83 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap CSS -->
+    <title>Burger Tracker</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <title>Burger trackers</title>
 </head>
-<body class="bg-light">
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card shadow">
-                    <div class="card-header bg-primary text-white">
-                        <h1 class="h3 mb-0">Burger Tracker</h1>
+<body class="bg-light py-4">
+    <div class="container">
+        <h1 class="mb-4">🍔 Burger Tracker</h1>
+
+        <!-- Table of Burgers -->
+        <div class="card mb-5">
+            <div class="card-header bg-primary text-white">Burger List</div>
+            <div class="card-body p-0">
+                <table class="table table-striped mb-0">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Burger Name</th>
+                            <th>Restaurant Name</th>
+                            <th>Rating (out of 5)</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <c:forEach var="burger" items="${burgers}">
+                            <tr>
+                                <td>${burger.burgerName}</td>
+                                <td>${burger.restaurantName}</td>
+                                <td>
+                                    <div class="rating">
+                                        <c:forEach begin="1" end="5" var="i">
+                                            <span style="color: ${i <= burger.rating ? 'orange' : 'lightgray'};">★</span>
+                                        </c:forEach>
+                                    </div>
+                                </td>
+                                <td>
+                                    <a href="/edit/${burger.id}" class="btn btn-sm btn-outline-secondary">Edit</a>
+                                </td>
+                            </tr>
+                        </c:forEach>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Add Burger Form -->
+        <div class="card">
+            <div class="card-header bg-success text-white">Add a Burger</div>
+            <div class="card-body">
+                <form:form action="/create" method="post" modelAttribute="burger">
+                    <div class="mb-3">
+                        <form:label path="burgerName" class="form-label">Burger Name</form:label>
+                        <form:input path="burgerName" class="form-control"/>
+                        <form:errors path="burgerName" class="text-danger"/>
                     </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-striped table-hover">
-                                <thead class="table-dark">
-                                    <tr>
-                                        <th>Burger Name</th>
-                                        <th>Restaurant Name</th>
-                                        <th>Rating (out of 5)</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <c:forEach var="burger" items="${burgers}">
-                                        <tr>
-                                            <td>${burger.burgerName}</td>
-                                            <td>${burger.restaurantName}</td>
-                                            <td>
-                                                <div class="rating">
-                                                    <c:forEach begin="1" end="5" var="i">
-                                                        <span class="star ${i <= burger.rating ? 'text-warning' : 'text-secondary'}">★</span>
-                                                    </c:forEach>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </c:forEach>
-                                </tbody>
-                            </table>
-                        </div>
-                        
-                        <div class="mt-5">
-                            <h2 class="h4 mb-4">Add a Burger</h2>
-                            <form:form action="/create" method="post" modelAttribute="burger" class="needs-validation" novalidate="novalidate">
-                                <div class="mb-3">
-                                    <form:label path="burgerName" class="form-label">Burger Name</form:label>
-                                    <form:input path="burgerName" class="form-control ${not empty burgerNameError ? 'is-invalid' : ''}"/>
-                                    <form:errors path="burgerName" class="invalid-feedback"/>
-                                </div>
-                                <div class="mb-3">
-                                    <form:label path="restaurantName" class="form-label">Restaurant Name</form:label>
-                                    <form:textarea path="restaurantName" class="form-control ${not empty restaurantNameError ? 'is-invalid' : ''}" rows="2"/>
-                                    <form:errors path="restaurantName" class="invalid-feedback"/>
-                                </div>
-                                <div class="mb-3">
-                                    <form:label path="rating" class="form-label">Rating (1-5)</form:label>
-                                    <form:input type="number" path="rating" min="1" max="5" class="form-control ${not empty ratingError ? 'is-invalid' : ''}"/>
-                                    <form:errors path="rating" class="invalid-feedback"/>
-                                </div>
-                                <div class="mb-3">
-                                    <form:label path="notes" class="form-label">Notes</form:label>
-                                    <form:input path="notes" class="form-control ${not empty notesError ? 'is-invalid' : ''}"/>
-                                    <form:errors path="notes" class="invalid-feedback"/>
-                                </div>
-                                <div class="d-grid">
-                                    <button type="submit" class="btn btn-primary btn-lg">Add a burger</button>
-                                </div>
-                            </form:form>
-                        </div>
+                    <div class="mb-3">
+                        <form:label path="restaurantName" class="form-label">Restaurant Name</form:label>
+                        <form:textarea path="restaurantName" rows="2" class="form-control"/>
+                        <form:errors path="restaurantName" class="text-danger"/>
                     </div>
-                </div>
+                    <div class="mb-3">
+                        <form:label path="rating" class="form-label">Rating (1-5)</form:label>
+                        <form:input type="number" path="rating" min="1" max="5" class="form-control"/>
+                        <form:errors path="rating" class="text-danger"/>
+                    </div>
+                    <div class="mb-3">
+                        <form:label path="notes" class="form-label">Notes</form:label>
+                        <form:input path="notes" class="form-control"/>
+                        <form:errors path="notes" class="text-danger"/>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-success">Add Burger</button>
+                    </div>
+                </form:form>
             </div>
         </div>
     </div>
 
-    <!-- Bootstrap JS Bundle with Popper -->
+    <!-- Bootstrap JS (optional) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Optional: Add some custom styling for the stars -->
-    <style>
-        .rating {
-            font-size: 1.2em;
-        }
-        .star {
-            margin-right: 2px;
-        }
-    </style>
 </body>
 </html>
