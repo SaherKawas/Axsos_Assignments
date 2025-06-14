@@ -1,7 +1,9 @@
-package com.axsos.loginregister.models;
+package com.axsos.bookclub.models;
 
 import java.util.Date;
 import java.util.List;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -10,29 +12,27 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
-
-import org.springframework.format.annotation.DateTimeFormat;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name="users")
-public class LoginRegister {
-	
+public class User {
+
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
     @NotNull
 	@Size(min = 5, max = 100)
-    private String username;
+    private String name;
     
     @NotNull(message = "Email cannot be null")
     @Email(message = "Invalid email address format")
@@ -54,18 +54,21 @@ public class LoginRegister {
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date updatedAt;
     
-    public LoginRegister() {
+    @OneToMany(mappedBy="user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    
+    private List<Book> books;
+    
+    public User() {
     	
     }
     
-    public LoginRegister(String username, String email, String password, String confirmPassword) {
-    	this.username=username;
+    public User(String name, String email, String password, String confirmPassword) {
+    	this.name=name;
     	this.email=email;
     	this.confirmPassword = confirmPassword;
 		this.password = password;
-    	
     }
-
+    
 	public Long getId() {
 		return id;
 	}
@@ -74,12 +77,12 @@ public class LoginRegister {
 		this.id = id;
 	}
 
-	public String getUsername() {
-		return username;
+	public String getName() {
+		return name;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getEmail() {
@@ -106,21 +109,20 @@ public class LoginRegister {
 		this.confirmPassword = confirmPassword;
 	}
 
-	public Date getCreatedAt() {
-		return createdAt;
+	public List<Book> getBooks() {
+		return books;
 	}
 
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
+	public void setBooks(List<Book> books) {
+		this.books = books;
 	}
 
-	public Date getUpdatedAt() {
-		return updatedAt;
-	}
-
-	public void setUpdatedAt(Date updatedAt) {
-		this.updatedAt = updatedAt;
-	}
-    
-
+	@PrePersist
+    protected void onCreate(){
+        this.createdAt = new Date();
+    }
+    @PreUpdate
+    protected void onUpdate(){
+        this.updatedAt = new Date();
+    }
 }
