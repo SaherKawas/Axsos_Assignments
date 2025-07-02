@@ -1,0 +1,52 @@
+const cars = ['Tesla','Mercedes','Honda']
+const[randomCar]=cars
+const[,otherrandom]=cars
+console.log(randomCar);  it will log Tesla
+console.log(otherrandom);  the comma means that it skips the first element and logs the second which is Mercedes
+
+
+const employee={
+name:'Elon',
+age:47,
+company:'tesla'
+}
+const{name}=employee 
+
+console.log(name); it throws an error
+console.log(othername); it will log ELon
+
+
+
+const person={
+name:'Elon',
+age:47,
+hight:'6 feet',
+password:'12344'
+}
+const password ='12345';  
+const{password:hashedPassword}=person 
+console.log(password); it will log 12345 (from the seperate variable)
+console.log(hashedPassword); it will log 12344 (from the object)
+
+
+
+const number=[8,2,3,5,6,1,67,12,2]
+const[,first]=number;
+const[,,,second]=number;
+const[,,,,,,,,third]=number
+console.log(first==second); is 2==5? false
+console.log(first==third); is 2==2? true
+
+
+
+const lastTest={
+key:'value',
+secondKey:[1,5,1,8,3,3]
+}
+const{key}=lastTest;
+const{secondKey}=lastTest;
+const[,willthiswork]=secondKey;
+console.log(key); it will log value
+console.log(secondKey); it will log [1,5,1,8,3,3]
+console.log(secondKey[0]); it will log 1
+console.log(willthiswork); it will log 5
