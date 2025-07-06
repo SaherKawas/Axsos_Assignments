@@ -1,6 +1,6 @@
 import React, { useState } from  'react';
     
-const UserForm = (props) => {
+const HomeComponent = (props) => {
     const [firstName, setFirstName] = useState("");
     const [firstNameError, setFirstNameError]= useState("");
 
@@ -20,8 +20,8 @@ const UserForm = (props) => {
         setFirstName(e.target.value);
         if (e.target.value.length<1){
             setFirstNameError("First Name is required");
-        } else if (e.target.value.length<2){
-            setFirstNameError("First Name must be at least 2 characters!")
+        } else if (e.target.value.length<4){
+            setFirstNameError("First Name must be 4 characters or longer!")
         } else {
             setFirstNameError("");
         }
@@ -31,8 +31,8 @@ const UserForm = (props) => {
         setLastName(e.target.value);
         if (e.target.value.length<1){
             setLastNameError("Last Name is required");
-        } else if (e.target.value.length<2){
-            setLastNameError("Last Name must be at least 2 characters!")
+        } else if (e.target.value.length<4){
+            setLastNameError("Last Name must be 4 characters or longer!")
         } else {
             setLastNameError("");
         }
@@ -40,13 +40,10 @@ const UserForm = (props) => {
 
     const handleEmail = (e) =>{
         setEmail(e.target.value);
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (e.target.value.length<1){
             setEmailError("Email is required");
         } else if (e.target.value.length<5){
             setEmailError("Email must be 5 characters or longer!")
-        } else if (!emailRegex.test(e.target.value)){
-            setEmailError("Invalid email format")
         } else {
             setEmailError("");
         }
@@ -153,4 +150,4 @@ const UserForm = (props) => {
     );
 };
     
-export default UserForm;
+export default HomeComponent;
