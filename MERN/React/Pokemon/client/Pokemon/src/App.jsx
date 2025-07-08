@@ -7,11 +7,8 @@ function App() {
 
     fetch('https://pokeapi.co/api/v2/pokemon?limit=807')
       .then(response => response.json())
-      .then(data => {
-        const names = data.results.map(pokemon => pokemon.name);
-        setPokemonList(names);
-        setLoading(false);
-      })
+      .then(data => setPokemonList(data.results.map(p => p.name)))
+
       .catch(error => {
         console.error("Error fetching Pokémon:", error);
       });
@@ -20,7 +17,7 @@ function App() {
   return (
     <div style={{ padding: '20px' }}>
       <h1>Pokémon Fetcher</h1>
-      <button onClick={fetchPokemon}>Fetch All 807 Pokémon</button>
+      <button onClick={fetchPokemon}>Fetch All Pokémon</button>
       <ul>
         {pokemonList.map((name, index) => (
           <li key={index}>{name}</li>
