@@ -5,13 +5,13 @@ import axios from 'axios';
     
 const Main = () => {
     const [products, setProducts] = useState([]);
-    const [loaded, setLoaded] = useState(false);
+    // const [loaded, setLoaded] = useState(false);
     
     useEffect(()=>{
         axios.get('http://localhost:8000/api/products')
             .then(res=>{
                 setProducts(res.data);
-                setLoaded(true);
+                // setLoaded(true);
             })
             .catch(err => console.error(err));
     },[]);
@@ -20,7 +20,7 @@ const Main = () => {
         <div>
            <ProductForm products={products} setProducts={setProducts}/>
            <hr/>
-           {loaded && <ProductList products={products}/>}
+           <ProductList products={products}/>
         </div>
     )
 }

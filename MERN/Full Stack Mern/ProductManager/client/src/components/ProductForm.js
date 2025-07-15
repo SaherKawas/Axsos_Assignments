@@ -12,7 +12,11 @@ const ProductForm= (props) => {
             description
         })
             .then(res=>{console.log(res.data)
-            props.setProducts([...props.products, res.data]);
+                
+            axios.get('http://localhost:8000/api/products')
+                .then(res => {
+                    props.setProducts(res.data);
+                });
             setTitle("");
             setPrice(0);
             setDescription("");})
