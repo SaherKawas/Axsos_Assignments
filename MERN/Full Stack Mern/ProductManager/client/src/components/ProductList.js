@@ -8,9 +8,7 @@ const ProductList = (props) => {
       
       const deleteProduct = (productId) => {
           axios.delete('http://localhost:8000/api/products/' + productId)
-              .then(res => {
-                  removeFromDom(productId)
-              })
+              .then(res => { removeFromDom(productId)})
               .catch(err => console.error(err));
   }
   return (

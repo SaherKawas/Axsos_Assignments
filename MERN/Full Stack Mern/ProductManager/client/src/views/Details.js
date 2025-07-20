@@ -17,7 +17,7 @@ const Detail = (props) => {
     axios.delete('http://localhost:8000/api/products/' + id)
       .then(res => {
         console.log('Deleted:', res.data);
-        navigate('/products'); // Go back to list after deletion
+        navigate('/products'); 
       })
       .catch(err => console.error(err));
   };
